@@ -1,5 +1,10 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-torch-mega.svg)](https://hub.docker.com/r/kaixhin/cuda-torch-mega/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-torch-mega.svg)](https://hub.docker.com/r/kaixhin/cuda-torch-mega/)
+
 docker-torch-mega
 =================
+
+Available from the Docker Hub as `kaixhin/cuda-torch-mega`.
 
 Ubuntu Core 14.04 + [CUDA 7.5](http://www.nvidia.com/object/cuda_home_new.html) + [cuDNN v5](https://developer.nvidia.com/cuDNN) + [Torch7](http://torch.ch/) (including iTorch). Includes the following additional packages:
 
