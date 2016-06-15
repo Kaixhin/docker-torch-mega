@@ -9,6 +9,9 @@ RUN cd /root && git clone https://github.com/NVIDIA/nccl.git && cd nccl && \
 ENV LD_LIBRARY_PATH=/root/nccl/lib:$LD_LIBRARY_PATH
 RUN luarocks install nccl
 
+# Install luaposix (removing CUDA stubs/LIBRARY_PATH)
+RUN unset LIBRARY_PATH && luarocks install luaposix
+
 # Install Moses
 RUN luarocks install moses
 
@@ -84,6 +87,3 @@ RUN luarocks install https://raw.githubusercontent.com/Kaixhin/alewrap/master/al
 
 # Install rlenvs
 RUN luarocks install https://raw.githubusercontent.com/Kaixhin/rlenvs/master/rocks/rlenvs-scm-1.rockspec
-
-# Install luaposix
-# RUN luarocks install luaposix
