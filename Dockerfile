@@ -39,6 +39,9 @@ RUN luarocks install ipc
 # Install distlearn
 RUN luarocks install distlearn
 
+# Install torchnet
+RUN luarocks install torchnet
+
 # Install classic
 RUN luarocks install classic
 
