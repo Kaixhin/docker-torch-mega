@@ -31,6 +31,7 @@ Ubuntu Core 14.04 + [CUDA 7.5](http://www.nvidia.com/object/cuda_home_new.html) 
 - [signal](https://github.com/soumith/torch-signal)
 - [stn](https://github.com/qassemoquab/stnbhwd)
 - [tds](https://github.com/torch/tds)
+- [torchnet](https://github.com/torchnet/torchnet)
 - [torchx](https://github.com/nicolas-leonard/torchx)
 - [xitari](https://github.com/lake4790k/xitari)
 
