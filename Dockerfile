@@ -79,6 +79,9 @@ RUN luarocks install inn
 # Install stn
 RUN luarocks install https://raw.githubusercontent.com/qassemoquab/stnbhwd/master/stnbhwd-scm-1.rockspec
 
+# Install optnet
+RUN luarocks install optnet
+
 # Install signal
 RUN luarocks install signal
 
