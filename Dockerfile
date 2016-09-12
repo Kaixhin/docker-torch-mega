@@ -76,8 +76,8 @@ RUN luarocks install loadcaffe
 # Install inn
 RUN luarocks install inn
 
-# Install stn
-RUN luarocks install https://raw.githubusercontent.com/qassemoquab/stnbhwd/master/stnbhwd-scm-1.rockspec
+# Install gvnn
+RUN luarocks install https://raw.githubusercontent.com/ankurhanda/gvnn/master/gvnn-scm-1.rockspec
 
 # Install optnet
 RUN luarocks install optnet
