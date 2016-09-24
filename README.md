@@ -34,6 +34,7 @@ Ubuntu Core 14.04 + [CUDA 7.5](http://www.nvidia.com/object/cuda_home_new.html) 
 - [tds](https://github.com/torch/tds)
 - [torchnet](https://github.com/torchnet/torchnet)
 - [torchx](https://github.com/nicolas-leonard/torchx)
+- [twrl](https://github.com/twitter/torch-twrl)
 - [xitari](https://github.com/lake4790k/xitari)
 
 Requirements

@@ -93,3 +93,6 @@ RUN luarocks install https://raw.githubusercontent.com/Kaixhin/alewrap/master/al
 
 # Install rlenvs
 RUN luarocks install https://raw.githubusercontent.com/Kaixhin/rlenvs/master/rocks/rlenvs-scm-1.rockspec
+
+# Install twrl
+RUN luarocks install twrl
