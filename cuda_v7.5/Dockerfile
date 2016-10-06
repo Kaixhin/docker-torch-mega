@@ -1,5 +1,5 @@
 # Start with CUDA Torch base image
-FROM kaixhin/cuda-torch
+FROM kaixhin/cuda-torch:7.5
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
 # Install NCCL for multi-GPU communication
