@@ -1,0 +1,44 @@
+# Start with CUDA Torch Mega base image
+FROM kaixhin/cuda-torch-mega
+MAINTAINER Kai Arulkumaran <design@kaixhin.com>
+
+# Set up sources and keys
+RUN echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list && \
+ apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-key 0xB01FA116
+# Install ROS Indigo desktop full with rosinstall
+RUN apt-get update && apt-get install -y \
+  ros-indigo-desktop-full \
+  python-rosinstall
+# Initialise rosdep
+RUN rosdep init && rosdep update
+# Set up environment
+RUN echo "source /opt/ros/indigo/setup.bash" >> /root/.bashrc
+
+# Install torch-ros (with bash for source)
+RUN bash -c "source /opt/ros/indigo/setup.bash && luarocks install https://raw.githubusercontent.com/Xamla/torch-ros/master/torch-ros-scm-1.rockspec"
+
+# Update Gazebo 2
+RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/gazebo-latest.list && \
+  curl http://packages.osrfoundation.org/gazebo.key | apt-key add - && \
+  apt-get update && apt-get install gazebo2
+
+# Install VirtualGL
+RUN curl -fsSL -o virtualgl.deb https://sourceforge.net/projects/virtualgl/files/2.5/virtualgl_2.5_amd64.deb/download && \
+  dpkg -i virtualgl.deb && rm virtualgl.deb
+ENV PATH=/opt/VirtualGL/bin/:${PATH}
+
+# Install x11vnc
+RUN apt-get install -y xvfb x11vnc
+# Expose VNC port 5900
+EXPOSE 5900
+
+RUN apt-get install mesa-utils
+
+RUN curl -fsSL -o turbovnc.deb https://sourceforge.net/projects/turbovnc/files/2.0.2/turbovnc_2.0.2_amd64.deb/download && \
+  dpkg -i turbovnc.deb && rm turbovnc.deb
+
+RUN vglrun Xvfb :0 &
+ENV DISPLAY=:0
+
+# Run x11vnc
+CMD ["vglrun", "x11vnc", "-forever"]
