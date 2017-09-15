@@ -2,13 +2,6 @@
 FROM kaixhin/cuda-torch:7.5
 MAINTAINER Kai Arulkumaran <design@kaixhin.com>
 
-# Install NCCL for multi-GPU communication
-RUN cd /root && git clone https://github.com/NVIDIA/nccl.git && cd nccl && \
-  make CUDA_HOME=/usr/local/cuda -j"$(nproc)" && \
-  make PREFIX=/root/nccl install
-ENV LD_LIBRARY_PATH=/root/nccl/lib:$LD_LIBRARY_PATH
-RUN luarocks install nccl
-
 # Install luaposix (removing CUDA stubs/LIBRARY_PATH)
 RUN unset LIBRARY_PATH && luarocks install luaposix
 

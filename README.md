@@ -23,7 +23,6 @@ Ubuntu Core 14.04 + [CUDA](http://www.nvidia.com/object/cuda_home_new.html) + [c
 - [luaposix](https://github.com/luaposix/luaposix)
 - [LuaSocket](https://github.com/diegonehab/luasocket)
 - [Moses](https://github.com/Yonaba/Moses)
-- [nccl](https://github.com/ngimel/nccl.torch)
 - [nninit](https://github.com/Kaixhin/nninit)
 - [nnquery](https://github.com/bshillingford/nnquery)
 - [OptNet](https://github.com/fmassa/optimize-net)
